@@ -30,6 +30,8 @@ def main():
     except KeyboardInterrupt:
         print("Nope")
         main()
+    except InterruptedError:
+        main()
     except Exception as e:
         print(e)
 
