@@ -1,0 +1,2 @@
+crontab -e #put @reboot <command>; don't use as sudo
+put python files in /bin
