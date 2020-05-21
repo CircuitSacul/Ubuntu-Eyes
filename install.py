@@ -8,8 +8,8 @@ with open('tmpcron', 'r') as f:
         print("Installing UbuntuEyes")
         os.system('echo "@reboot python3 /bin/UbuntuEyes/main.py" >> tmpcron')
         os.system('crontab tmpcron')
-        os.system('rm tmpcron')
     else:
         print("Reinstalling UbuntuEyes")
+os.system('rm tmpcron')
 
 print("Installed UbuntuEyes")
