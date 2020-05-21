@@ -27,8 +27,10 @@ def main():
         while True:
             screenshot()
             delay(GRAB_DELAY_RANGE)
+    except KeyboardInterrupt:
+        print("Nope")
+        main()
     except Exception as e:
         print(e)
-        main()
 
 main()
