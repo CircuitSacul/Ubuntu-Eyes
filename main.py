@@ -23,13 +23,12 @@ def delay(delay_range):
 
 
 def main():
-    while True:
-        screenshot()
-        delay(GRAB_DELAY_RANGE)
-
-
-if __name__ == '__main__':
     try:
-        main()
+        while True:
+            screenshot()
+            delay(GRAB_DELAY_RANGE)
     except Exception as e:
-        print(f"Error occurred:\n{e}")
+        print(e)
+        main()
+
+main()
