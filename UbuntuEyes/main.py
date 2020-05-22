@@ -4,6 +4,7 @@ from numpy import random
 from time import sleep
 from os.path import expanduser
 
+os.environ["DISPLAY"] = ':0'
 
 TMP_SCREEN_PATH = expanduser('~') + '/.UE/tmp.png'
 LOG_FILE_PATH = expanduser('~') + '/.UE/log.txt'
