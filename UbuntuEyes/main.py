@@ -2,18 +2,17 @@ import pyscreenshot as screen
 import os
 from numpy import random
 from time import sleep
+from os.path import expanduser
 
 
-TMP_SCREEN_PATH = 'tmp.png'
+TMP_SCREEN_PATH = expanduser('~') + '/.UE/tmp.png'
+LOG_FILE_PATH = expanduser('~') + '/.UE/log.txt'
 GRAB_DELAY_RANGE = (1, 10)
 
 
 def screenshot(save_path=TMP_SCREEN_PATH):
-    try:
-        img = screen.grab()
-        img.save(save_path)
-    except Exception as e:
-        print(f"Error occurred while capturing screen:\n{e}")
+    img = screen.grab()
+    img.save(save_path)
 
 
 def delay(delay_range):
@@ -30,9 +29,14 @@ def main():
     except KeyboardInterrupt:
         print("Nope")
         main()
-    except InterruptedError:
-        main()
     except Exception as e:
         print(e)
+        with open(LOG_FILE_PATH, 'a') as f:
+            f.write(str(type(e))+str(e)+'\n')
+        sleep(5)
+        main()
 
+f = open(LOG_FILE_PATH, 'w+')
+f.write('Startup')
+f.close()
 main()
