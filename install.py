@@ -2,8 +2,13 @@ import os
 
 COMMAND = '@reboot python3 /bin/UbuntuEyes/main.py &'
 
+
+os.system('git pull')
+
 os.system('mkdir ~/.UE')
+
 os.system('sudo cp -r UbuntuEyes /bin')
+
 os.system('crontab -l > tmpcron')
 with open('tmpcron', 'r') as f:
     contents = f.read()
@@ -14,6 +19,7 @@ with open('tmpcron', 'r') as f:
     else:
         print("Reinstalling UbuntuEyes")
 os.system('rm tmpcron')
+
 
 print("Installed UbuntuEyes")
 
