@@ -1,5 +1,6 @@
 import os
 
+OLD_COMMANDS = []
 COMMAND = '@reboot python3 /bin/UbuntuEyes/main.py &'
 
 
@@ -18,6 +19,9 @@ with open('tmpcron', 'r') as f:
         os.system('crontab tmpcron')
     else:
         print("Reinstalling UbuntuEyes")
+    for command in OLD_COMMANDS:
+        if command in contents:
+            contents.replace(command, '')
 os.system('rm tmpcron')
 
 
