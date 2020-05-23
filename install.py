@@ -14,18 +14,16 @@ os.system('crontab -l > tmpcron')
 with open('tmpcron', 'r') as f:
     contents = f.read()
     if COMMAND not in contents:
-        print("Installing UbuntuEyes")
         os.system(f'echo "{COMMAND}" >> tmpcron')
         os.system('crontab tmpcron')
     else:
-        print("Reinstalling UbuntuEyes")
     for command in OLD_COMMANDS:
         if command in contents:
             contents.replace(command, '')
 os.system('rm tmpcron')
 
 
-print("Installed UbuntuEyes")
+print("UbuntuEyes Installed")
 
 y_or_n = input("The computer must restart in order to complete the installation; do you want to restart now?")
 
