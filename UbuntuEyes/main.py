@@ -8,7 +8,7 @@ os.environ["DISPLAY"] = ':0'
 
 TMP_SCREEN_PATH = expanduser('~') + '/.UE/tmp.png'
 LOG_FILE_PATH = expanduser('~') + '/.UE/log.txt'
-GRAB_DELAY_RANGE = (1, 10)
+GRAB_DELAY_RANGE = (5, 20)
 
 
 def screenshot(save_path=TMP_SCREEN_PATH):
