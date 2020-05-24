@@ -26,7 +26,7 @@ def delay(delay_range):
 def main():
     try:
         while True:
-            save_path = TMP_SCREEN_PATH + str(datetime.datetime.now().time()).replace('.', '')
+            save_path = TMP_SCREEN_PATH + str(datetime.now().time()).replace('.', '')
             screenshot()
             delay(GRAB_DELAY_RANGE)
     except KeyboardInterrupt:
