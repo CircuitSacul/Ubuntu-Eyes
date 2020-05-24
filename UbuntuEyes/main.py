@@ -12,7 +12,7 @@ LOG_FILE_PATH = expanduser('~') + '/.UE/log.txt'
 GRAB_DELAY_RANGE = (5, 20)
 
 
-def screenshot(save_path=TMP_SCREEN_PATH+str(datetime.datetime.now().time())):
+def screenshot(save_path):
     img = screen.grab()
     img.save(save_path)
 
@@ -26,6 +26,7 @@ def delay(delay_range):
 def main():
     try:
         while True:
+            save_path = TMP_SCREEN_PATH + str(datetime.datetime.now().time()).replace('.', '')
             screenshot()
             delay(GRAB_DELAY_RANGE)
     except KeyboardInterrupt:
