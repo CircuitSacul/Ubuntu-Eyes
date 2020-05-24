@@ -37,7 +37,9 @@ def main():
         sleep(5)
         main()
 
-f = open(LOG_FILE_PATH, 'w+')
-f.write('Startup')
-f.close()
-main()
+
+if __name__ == '__main__':
+    f = open(LOG_FILE_PATH, 'w+')
+    f.write('Startup\n')
+    f.close()
+    main()
