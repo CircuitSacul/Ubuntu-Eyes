@@ -27,7 +27,7 @@ def main():
     try:
         while True:
             save_path = TMP_SCREEN_PATH + str(datetime.now().time()).replace('.', '')
-            screenshot()
+            screenshot(save_path)
             delay(GRAB_DELAY_RANGE)
     except KeyboardInterrupt:
         main()
